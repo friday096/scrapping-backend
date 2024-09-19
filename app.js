@@ -43,9 +43,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-var port = process.env.PORT || 8081;
-app.listen(port, function() {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(8081, function() {
+  console.log(`Server is running on http://localhost:8081`);
 });
 
 module.exports = app;
