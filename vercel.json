@@ -1,4 +1,11 @@
 {
-    "src": "bin/www.js",
-    "use": "@vercel/node"
-}
+    "version": 2,
+    "builds": [ ],
+    "routes": [
+      { "handle": "filesystem" },
+      {
+        "src": "/(.*)",
+        "dest": "bin/www.js"
+      }
+    ]
+  }
