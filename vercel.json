@@ -3,12 +3,7 @@
     "builds": [
       {
         "src": "bin/www",
-        "use": "@vercel/node",
-        "config": {
-          "env": {
-            "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
-          }
-        }
+        "use": "@vercel/node"
       }
     ],
     "routes": [
@@ -19,4 +14,3 @@
       }
     ]
   }
-  
