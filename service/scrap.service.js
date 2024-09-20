@@ -14,7 +14,16 @@ module.exports = {
         console.log('Backend URL:', url);
     
         try {
-            const browser = await puppeteer.launch();
+            const browser = await puppeteer.launch({
+                headless: true,
+                args: [
+                  '--no-sandbox',
+                  '--disable-setuid-sandbox',
+                  '--disable-dev-shm-usage', // Reduces the amount of temporary storage used by Chrome
+                  '--disable-gpu',            // Optional but can help with some deployments
+                  '--disable-software-rasterizer' // Optional, but can prevent GPU errors in headless mode
+                ],
+              });
             const page = await browser.newPage();
             await page.goto(url, { waitUntil: 'networkidle2' });
 
